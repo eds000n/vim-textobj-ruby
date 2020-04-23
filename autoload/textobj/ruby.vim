@@ -141,5 +141,15 @@ function! textobj#ruby#do_block_select_a()
 endfunction
 "}}}
 
+" select varname
+function! textobj#ruby#select_var() " {{{
+    normal! E
+    let head_pos = getpos('.')
+    normal! B
+    let tail_pos = getpos('.')
+    return ['v', head_pos, tail_pos]
+endfunction
+"}}}
+
 let &cpo = s:save_cpo
 unlet s:save_cpo

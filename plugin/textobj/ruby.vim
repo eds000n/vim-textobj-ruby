@@ -51,5 +51,18 @@ else
     "}}}
 endif
 
+" ar/ir mapping only. keep mapping simple. "{{{
+call textobj#user#plugin('ruby', {
+    \
+    \ 'any' : {
+    \      'select-a-function' : 'textobj#ruby#select_var',
+    \      'select-a' : 'av', 
+    \      'select-i-function' : 'textobj#ruby#select_var',
+    \      'select-i' : 'iv', 
+    \   },
+    \
+    \ })
+"}}}
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
